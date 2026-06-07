@@ -51,10 +51,16 @@ const photos = [
 }
 .photo-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 45vw, 400px), 1fr));
+  gap: clamp(10px, 3vw, 12px);
   max-width: 950px;
-  margin: 40px auto 0;
+  margin: clamp(30px, 8vw, 40px) auto 0;
+}
+
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
 }
 .photo-box {
   border-radius: 18px;
@@ -78,9 +84,9 @@ const photos = [
   position: relative;
   z-index: 1;
   font-family: "Great Vibes", cursive;
-  font-size: clamp(18px, 4vw, 22px);
+  font-size: clamp(14px, 3.5vw, 22px);
   color: #fff;
-  padding: 14px;
+  padding: clamp(10px, 3vw, 14px);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
   width: 100%;

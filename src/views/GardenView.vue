@@ -44,8 +44,8 @@ const flowers = [
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 18px;
-  margin: 44px 0 16px;
+  gap: clamp(12px, 3vw, 18px);
+  margin: clamp(30px, 8vw, 44px) 0 16px;
 }
 .f-item {
   display: flex;
@@ -55,7 +55,7 @@ const flowers = [
   position: relative;
 }
 .f-emoji {
-  font-size: clamp(28px, 6vw, 38px);
+  font-size: clamp(24px, 5vw, 38px);
   display: block;
   transition: transform 0.3s ease;
 }
@@ -74,13 +74,20 @@ const flowers = [
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 10px;
   padding: 7px 12px;
-  font-size: 11px;
+  font-size: clamp(9px, 2vw, 11px);
   color: var(--lpink);
-  white-space: nowrap;
+  white-space: normal;
+  max-width: 150px;
   letter-spacing: 0.5px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .f-tip {
+    display: none;
+  }
 }
 .f-item:hover .f-tip {
   opacity: 1;

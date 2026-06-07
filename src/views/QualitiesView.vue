@@ -48,10 +48,16 @@ onMounted(() => {
 }
 .q-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 45vw, 190px), 1fr));
+  gap: clamp(10px, 3vw, 14px);
   max-width: 800px;
-  margin: 40px auto 0;
+  margin: clamp(30px, 8vw, 40px) auto 0;
+}
+
+@media (max-width: 480px) {
+  .q-grid {
+    grid-template-columns: 1fr;
+  }
 }
 .q-card {
   background: var(--card);
@@ -89,7 +95,7 @@ onMounted(() => {
   margin-bottom: 8px;
 }
 .q-card p {
-  font-size: 12px;
+  font-size: clamp(11px, 2vw, 12px);
   line-height: 1.75;
   color: var(--muted);
 }

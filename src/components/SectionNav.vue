@@ -78,15 +78,17 @@ function go(name) {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 14px 18px;
+  gap: clamp(8px, 2vw, 12px);
+  padding: clamp(10px, 3vw, 14px) clamp(12px, 4vw, 18px);
   background: linear-gradient(to bottom, rgba(14, 2, 8, 0.85), transparent);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+  flex-wrap: wrap;
 }
 .dots {
   display: flex;
-  gap: 9px;
+  gap: clamp(6px, 2vw, 9px);
+  order: 1;
 }
 .dot {
   width: 9px;
@@ -110,30 +112,41 @@ function go(name) {
   display: flex;
   gap: 8px;
 }
+.arrows {
+  display: flex;
+  gap: clamp(6px, 2vw, 8px);
+  order: 2;
+  flex-wrap: wrap;
+}
+
 .arrow {
   font-family: "Nunito", sans-serif;
-  font-size: 11px;
+  font-size: clamp(9px, 2vw, 11px);
   letter-spacing: 1px;
   color: var(--lpink);
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 999px;
-  padding: 7px 14px;
+  padding: clamp(5px, 1.5vw, 7px) clamp(10px, 2vw, 14px);
   cursor: pointer;
   transition:
     background 0.3s ease,
     opacity 0.3s ease;
 }
+
 .arrow:hover:not(:disabled) {
   background: rgba(255, 255, 255, 0.09);
 }
+
 .arrow:disabled {
   opacity: 0;
   pointer-events: none;
 }
+
 @media (max-width: 480px) {
   .arrow {
-    padding: 7px 10px;
+    padding: 5px 8px;
+    font-size: 8px;
   }
 }
 </style>

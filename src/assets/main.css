@@ -26,13 +26,42 @@ body {
   font-family: "Nunito", sans-serif;
   font-weight: 300;
   overflow-x: hidden;
+  scroll-padding-top: 60px;
+}
+
+/* Smooth scrolling for all browsers */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better touch scrolling for mobile */
+@media (max-width: 768px) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 /* Shared section helpers */
 .sec {
   position: relative;
   z-index: 10;
-  padding: 90px 24px;
+  padding: clamp(60px, 12vw, 90px) clamp(16px, 5vw, 24px);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Mobile first */
+@media (max-width: 480px) {
+  .sec {
+    padding: 50px 16px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .sec {
+    padding: 70px 20px;
+  }
 }
 .sec-sub {
   display: block;
@@ -72,4 +101,13 @@ body {
     opacity: 1;
     transform: none;
   }
+}
+
+/* Responsive font sizing */
+.sec-sub {
+  font-size: clamp(14px, 3.5vw, 22px) !important;
+}
+
+.sec-title {
+  font-size: clamp(28px, 8vw, 64px) !important;
 }
