@@ -1,20 +1,30 @@
 <script setup>
 defineProps({
-  show: { type: Boolean, default: false },
-})
+  show: {type: Boolean, default: false},
+});
 </script>
 
 <template>
-  <div id="player" :class="{ show }" aria-label="Music player">
+  <div
+    id="player"
+    :class="{show}"
+    aria-label="Music player"
+  >
     <iframe
       data-testid="embed-iframe"
       style="border-radius: 12px"
-      src="https://open.spotify.com/embed/track/0PG9fbaaHFHfre2gUVo7AN?utm_source=generator&theme=0"
+      src="https://open.spotify.com/embed/track/0bHer4P44xn8jcyMH0EMs8?utm_source=generator=0"
       width="100%"
       height="152"
       frameborder="0"
       allowfullscreen
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      allow="
+        autoplay;
+        clipboard-write;
+        encrypted-media;
+        fullscreen;
+        picture-in-picture;
+      "
       loading="lazy"
       title="A song for you"
     ></iframe>

@@ -1,6 +1,6 @@
 <script setup>
-import { useRouter } from "vue-router"
-const router = useRouter()
+import {useRouter} from "vue-router";
+const router = useRouter();
 </script>
 
 <template>
@@ -12,7 +12,10 @@ const router = useRouter()
       Every petal holds a whisper of how much you mean to me.
     </p>
     <span class="hero-flower">🌸</span>
-    <button class="scroll-hint" @click="router.push({ name: 'letter' })">
+    <button
+      class="scroll-hint"
+      @click="router.push({name: 'letter'})"
+    >
       <span>SCROLL TO DISCOVER</span>
       <span class="scroll-arrow">↓</span>
     </button>
@@ -27,7 +30,12 @@ const router = useRouter()
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: radial-gradient(ellipse 80% 70% at 50% 40%, #280b18 0%, #0e0208 100%);
+  background: radial-gradient(
+    ellipse 80% 70% at 50% 40%,
+    #280b18 0%,
+    #0e0208 100%
+  );
+  padding: clamp(40px, 8vw, 90px) clamp(16px, 5vw, 24px);
 }
 .hero-sub {
   display: flex;
@@ -43,11 +51,12 @@ const router = useRouter()
 .hero h1 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 300;
-  font-size: clamp(52px, 14vw, 88px);
+  font-size: clamp(40px, 12vw, 88px);
   line-height: 1.1;
   color: #fff6fa;
   opacity: 0;
   animation: fadeUp 0.8s 0.5s ease forwards;
+  word-spacing: 100vw;
 }
 .hero h1.italic {
   font-style: italic;
@@ -56,16 +65,16 @@ const router = useRouter()
 }
 .hero-desc {
   margin-top: 22px;
-  font-size: 13px;
+  font-size: clamp(12px, 2.5vw, 13px);
   letter-spacing: 1.2px;
   color: var(--muted);
-  max-width: 360px;
+  max-width: clamp(280px, 90vw, 360px);
   line-height: 1.7;
   opacity: 0;
   animation: fadeUp 0.8s 0.85s ease forwards;
 }
 .hero-flower {
-  font-size: 52px;
+  font-size: clamp(40px, 10vw, 52px);
   margin-top: 34px;
   opacity: 0;
   animation:
@@ -73,13 +82,13 @@ const router = useRouter()
     float 4s 2s ease-in-out infinite;
 }
 .scroll-hint {
-  margin-top: 36px;
+  margin-top: clamp(24px, 5vw, 36px);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 6px;
   font-family: "Nunito", sans-serif;
-  font-size: 9px;
+  font-size: clamp(8px, 2vw, 9px);
   letter-spacing: 4px;
   color: rgba(255, 190, 215, 0.35);
   background: none;

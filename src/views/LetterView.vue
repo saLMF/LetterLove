@@ -23,15 +23,19 @@
 .letter-sec {
   display: flex;
   justify-content: center;
-  background: radial-gradient(ellipse 70% 60% at 50% 50%, #1e0913 0%, #0a0106 100%);
+  background: radial-gradient(
+    ellipse 70% 60% at 50% 50%,
+    #1e0913 0%,
+    #0a0106 100%
+  );
 }
 .letter-card {
-  max-width: 580px;
+  max-width: clamp(300px, 95vw, 580px);
   width: 100%;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 22px;
-  padding: 52px 42px;
+  padding: clamp(32px, 8vw, 52px) clamp(24px, 6vw, 42px);
   text-align: center;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -52,7 +56,7 @@
 .letter-card h2 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 300;
-  font-size: clamp(34px, 8vw, 52px);
+  font-size: clamp(28px, 7vw, 52px);
   line-height: 1.2;
   color: #fff6fa;
   margin-bottom: 24px;
@@ -62,7 +66,7 @@
   color: var(--lpink);
 }
 .letter-card p {
-  font-size: 13.5px;
+  font-size: clamp(12px, 2.5vw, 13.5px);
   line-height: 1.85;
   color: var(--muted);
   margin-bottom: 14px;

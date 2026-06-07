@@ -1,6 +1,6 @@
 <script setup>
-import { useRouter } from "vue-router"
-const router = useRouter()
+import {useRouter} from "vue-router";
+const router = useRouter();
 </script>
 
 <template>
@@ -15,7 +15,10 @@ const router = useRouter()
     </p>
     <span class="final-heart">💗</span>
     <div class="final-sign">Made with love, just for you 🌸</div>
-    <button class="restart" @click="router.push({ name: 'hero' })">
+    <button
+      class="restart"
+      @click="router.push({name: 'hero'})"
+    >
       ↺ read it again
     </button>
   </section>
@@ -24,7 +27,11 @@ const router = useRouter()
 <style scoped>
 .final-sec {
   text-align: center;
-  background: radial-gradient(ellipse 70% 60% at 50% 50%, #200b15 0%, #0a0106 100%);
+  background: radial-gradient(
+    ellipse 70% 60% at 50% 50%,
+    #200b15 0%,
+    #0a0106 100%
+  );
   padding-bottom: 130px;
 }
 .final-flowers {
@@ -36,7 +43,7 @@ const router = useRouter()
 .final-sec h2 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 300;
-  font-size: clamp(40px, 11vw, 68px);
+  font-size: clamp(32px, 10vw, 68px);
   line-height: 1.2;
   color: #fff6fa;
 }
@@ -45,14 +52,14 @@ const router = useRouter()
   color: var(--lpink);
 }
 .final-p {
-  max-width: 480px;
+  max-width: clamp(280px, 90vw, 480px);
   margin: 26px auto;
-  font-size: 13.5px;
+  font-size: clamp(12px, 2.5vw, 13.5px);
   line-height: 1.85;
   color: var(--muted);
 }
 .final-heart {
-  font-size: 52px;
+  font-size: clamp(40px, 10vw, 52px);
   display: block;
   margin: 26px auto;
   animation: heartbeat 1.6s ease-in-out infinite;

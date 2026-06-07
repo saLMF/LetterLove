@@ -1,24 +1,51 @@
 <script setup>
-import { ref, onMounted } from "vue"
+import {ref, onMounted} from "vue";
 
 const qualities = [
-  { icon: "🌹", title: "Your Smile", text: "It lights up every room and every corner of my heart simultaneously." },
-  { icon: "✨", title: "Your Soul", text: "Rare, genuine, and more beautiful than any flower ever grown." },
-  { icon: "🌸", title: "Your Kindness", text: "The way you love the world makes me want to be better every single day." },
-  { icon: "🌙", title: "Your Laughter", text: "The universe's favourite melody. My most treasured song." },
-  { icon: "🌺", title: "Your Strength", text: "You carry so much grace through everything. I admire you endlessly." },
-  { icon: "💖", title: "Simply You", text: "Every version of you, every moment — you are more than enough." },
-]
+  {
+    icon: "🌹",
+    title: "Your Smile",
+    text: "It lights up every room and every corner of my heart simultaneously.",
+  },
+  {
+    icon: "✨",
+    title: "Your Soul",
+    text: "Rare, genuine, and more beautiful than any flower ever grown.",
+  },
+  {
+    icon: "🌸",
+    title: "Your Kindness",
+    text: "The way you love the world makes me want to be better every single day.",
+  },
+  {
+    icon: "🌙",
+    title: "Your Laughter",
+    text: "The universe's favourite melody. My most treasured song.",
+  },
+  {
+    icon: "🌺",
+    title: "Your Strength",
+    text: "You carry so much grace through everything. I admire you endlessly.",
+  },
+  {
+    icon: "💖",
+    title: "Simply You",
+    text: "Every version of you, every moment — you are more than enough.",
+  },
+];
 
-const revealed = ref(qualities.map(() => false))
+const revealed = ref(qualities.map(() => false));
 
 onMounted(() => {
   qualities.forEach((_, i) => {
-    setTimeout(() => {
-      revealed.value[i] = true
-    }, 120 + i * 110)
-  })
-})
+    setTimeout(
+      () => {
+        revealed.value[i] = true;
+      },
+      120 + i * 110,
+    );
+  });
+});
 </script>
 
 <template>
@@ -30,8 +57,8 @@ onMounted(() => {
         v-for="(q, i) in qualities"
         :key="q.title"
         class="q-card"
-        :class="{ reveal: revealed[i] }"
-        :style="{ transitionDelay: i * 0.09 + 's' }"
+        :class="{reveal: revealed[i]}"
+        :style="{transitionDelay: i * 0.09 + 's'}"
       >
         <span class="q-icon">{{ q.icon }}</span>
         <h3>{{ q.title }}</h3>
@@ -44,14 +71,27 @@ onMounted(() => {
 <style scoped>
 .qualities-sec {
   text-align: center;
-  background: radial-gradient(ellipse 70% 60% at 50% 50%, #1c0a12 0%, #0a0106 100%);
+  background: radial-gradient(
+    ellipse 70% 60% at 50% 50%,
+    #1c0a12 0%,
+    #0a0106 100%
+  );
 }
 .q-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(150px, 45vw, 190px), 1fr)
+  );
+  gap: clamp(10px, 3vw, 14px);
   max-width: 800px;
-  margin: 40px auto 0;
+  margin: clamp(30px, 8vw, 40px) auto 0;
+}
+
+@media (max-width: 480px) {
+  .q-grid {
+    grid-template-columns: 1fr;
+  }
 }
 .q-card {
   background: var(--card);
@@ -89,7 +129,7 @@ onMounted(() => {
   margin-bottom: 8px;
 }
 .q-card p {
-  font-size: 12px;
+  font-size: clamp(11px, 2vw, 12px);
   line-height: 1.75;
   color: var(--muted);
 }
