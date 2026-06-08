@@ -51,29 +51,30 @@ const photos = [
 }
 .photo-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  max-width: 600px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(200px, 45vw, 400px), 1fr)
+  );
+  gap: clamp(10px, 3vw, 12px);
+  max-width: 950px;
   margin: clamp(30px, 8vw, 40px) auto 0;
-  padding: 24px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-  border: 3px solid rgba(255, 200, 221, 0.4);
-  border-radius: 2px;
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4), 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+}
 .photo-box {
-  border-radius: 0;
+  border-radius: 18px;
   overflow: hidden;
   aspect-ratio: 16/9;
-  min-height: 320px;
   position: relative;
-  background: #0f0509;
-  border: 2px solid rgba(255, 200, 221, 0.25);
+  background: #1a0a14;
+  border: 1px solid var(--border);
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
 }
 .photo-box img {
   position: absolute;
