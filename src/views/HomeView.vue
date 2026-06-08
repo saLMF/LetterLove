@@ -8,12 +8,14 @@ import FinalView from "./FinalView.vue";
 </script>
 
 <template>
-  <HeroView />
-  <LetterView />
-  <QualitiesView />
-  <GardenView />
-  <PhotosView />
-  <FinalView />
+  <main class="page">
+    <HeroView />
+    <LetterView />
+    <QualitiesView />
+    <GardenView />
+    <PhotosView />
+    <FinalView />
+  </main>
 </template>
 
 <style scoped>
