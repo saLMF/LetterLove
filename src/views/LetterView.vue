@@ -10,12 +10,6 @@
         every corner of my world with something I never knew I needed.
       </p>
       <p>
-        No matter where life takes us, I promise to always cherish and adore
-        you, to support you in every dream, and to love you with all that I am.
-        You are my forever, and I can't wait to see what our future holds
-        together.
-      </p>
-      <p>
         Like a secret garden blooming in the quietest part of my soul, you have
         grown into something so beautiful and rare. I am endlessly grateful for
         every moment we share, every smile you give, and every dream we build
