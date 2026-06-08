@@ -53,7 +53,7 @@ const photos = [
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  max-width: 320px;
+  max-width: 800px;
   margin: clamp(30px, 8vw, 40px) auto 0;
   padding: 24px;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
@@ -65,7 +65,7 @@ const photos = [
 .photo-box {
   border-radius: 0;
   overflow: hidden;
-  aspect-ratio: 1/1;
+  aspect-ratio: 16/9;
   position: relative;
   background: #0f0509;
   border: 2px solid rgba(255, 200, 221, 0.25);
