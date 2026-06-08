@@ -10,9 +10,27 @@
         every corner of my world with something I never knew I needed.
       </p>
       <p>
+        No matter where life takes us, I promise to always cherish and adore
+        you, to support you in every dream, and to love you with all that I am.
+        You are my forever, and I can't wait to see what our future holds
+        together.
+      </p>
+      <p>
+        Like a secret garden blooming in the quietest part of my soul, you have
+        grown into something so beautiful and rare. I am endlessly grateful for
+        every moment we share, every smile you give, and every dream we build
+        together.
+      </p>
+      <p>
         These flowers are not enough. No words ever could be. But they carry
         every unspoken feeling I hold for you, pressed between their petals like
         tiny love letters waiting to be found.
+      </p>
+      <p>
+        I hope this little letter, wrapped in the petals of these flowers, can
+        carry even a fraction of the love and admiration I have for you. You are
+        my muse, my confidant, and the love of my life. I am so lucky to call
+        you mine.
       </p>
       <span class="signature">~ Always yours 🌹</span>
     </div>

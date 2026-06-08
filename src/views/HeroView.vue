@@ -4,7 +4,7 @@
   <section class="sec hero">
     <div class="hero-sub">🌸 a love letter in bloom</div>
     <h1>For You,</h1>
-    <h1 class="italic">My Everything</h1>
+    <h1 class="italic">My Ms.JustFriend</h1>
     <p class="hero-desc">
       Every petal holds a whisper of how much you mean to me.
     </p>
