@@ -56,7 +56,6 @@ function openGift() {
     id="main"
     :class="{show: opened}"
   >
-    <SectionNav v-if="opened" />
     <router-view v-slot="{Component}">
       <transition
         name="page"
