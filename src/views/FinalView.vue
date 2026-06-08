@@ -1,6 +1,7 @@
 <script setup>
-import {useRouter} from "vue-router";
-const router = useRouter();
+function toTop() {
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
 </script>
 
 <template>

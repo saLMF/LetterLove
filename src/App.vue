@@ -1,51 +1,67 @@
 <script setup>
-import { ref } from "vue"
-import IntroGift from "./components/IntroGift.vue"
-import PetalField from "./components/PetalField.vue"
-import MusicPlayer from "./components/MusicPlayer.vue"
-import SectionNav from "./components/SectionNav.vue"
+import {ref} from "vue";
+import IntroGift from "./components/IntroGift.vue";
+import PetalField from "./components/PetalField.vue";
+import MusicPlayer from "./components/MusicPlayer.vue";
 
-const opened = ref(false)
-const introOut = ref(false)
-const flashOn = ref(false)
-const flashOff = ref(false)
-const petalRef = ref(null)
+const opened = ref(false);
+const introOut = ref(false);
+const flashOn = ref(false);
+const flashOff = ref(false);
+const petalRef = ref(null);
 
 function openGift() {
-  if (opened.value) return
+  if (opened.value) return;
   // flash pink
-  flashOn.value = true
+  flashOn.value = true;
   setTimeout(() => {
-    flashOn.value = false
-    flashOff.value = true
-    introOut.value = true
-    opened.value = true
-    petalRef.value?.start()
+    flashOn.value = false;
+    flashOff.value = true;
+    introOut.value = true;
+    opened.value = true;
+    petalRef.value?.start();
     setTimeout(() => {
-      flashOff.value = false
-    }, 900)
-  }, 320)
+      flashOff.value = false;
+    }, 900);
+  }, 320);
 }
 </script>
 
 <template>
   <!-- FLASH OVERLAY -->
-  <div id="flash" :class="{ on: flashOn, off: flashOff }" aria-hidden="true"></div>
+  <div
+    id="flash"
+    :class="{on: flashOn, off: flashOff}"
+    aria-hidden="true"
+  ></div>
 
   <!-- INTRO SCREEN -->
-  <IntroGift v-if="!introOut || !opened" :out="introOut" @open="openGift" />
+  <IntroGift
+    v-if="!introOut || !opened"
+    :out="introOut"
+    @open="openGift"
+  />
 
   <!-- MUSIC PLAYER -->
   <MusicPlayer :show="opened" />
 
   <!-- FALLING PETALS -->
-  <PetalField ref="petalRef" :active="false" />
+  <PetalField
+    ref="petalRef"
+    :active="false"
+  />
 
   <!-- MAIN CONTENT -->
-  <div id="main" :class="{ show: opened }">
+  <div
+    id="main"
+    :class="{show: opened}"
+  >
     <SectionNav v-if="opened" />
-    <router-view v-slot="{ Component }">
-      <transition name="page" mode="out-in">
+    <router-view v-slot="{Component}">
+      <transition
+        name="page"
+        mode="out-in"
+      >
         <component :is="Component" />
       </transition>
     </router-view>
