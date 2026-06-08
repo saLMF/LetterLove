@@ -50,28 +50,24 @@ const photos = [
   );
 }
 .photo-grid {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(clamp(200px, 45vw, 400px), 1fr)
-  );
-  gap: clamp(10px, 3vw, 12px);
-  max-width: 950px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 280px;
   margin: clamp(30px, 8vw, 40px) auto 0;
+  padding: 20px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), transparent);
+  border: 2px solid rgba(255, 200, 221, 0.3);
+  border-radius: 8px;
 }
 
-@media (max-width: 768px) {
-  .photo-grid {
-    grid-template-columns: 1fr;
-  }
-}
 .photo-box {
-  border-radius: 18px;
+  border-radius: 4px;
   overflow: hidden;
-  aspect-ratio: 16/9;
+  aspect-ratio: 4/5;
   position: relative;
   background: #1a0a14;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 200, 221, 0.2);
   display: flex;
   align-items: flex-end;
   justify-content: center;
